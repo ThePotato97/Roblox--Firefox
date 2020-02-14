@@ -218,7 +218,6 @@
 		"contextMenus",
 		"webRequest",
 		"webRequestBlocking",
-		"tts",
 		"notifications",
 		"*://*.roblox.com/*",
 		"*://*.rbxcdn.com/*",
