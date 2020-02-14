@@ -239,5 +239,5 @@
 	],
 
 	"manifest_version": 2,
-	"incognito": "split"
+	"incognito": "spanning"
 }
