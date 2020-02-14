@@ -416,7 +416,7 @@ ext.tts = {
 				var playQueue; playQueue = function () {
 					var cut = queue.shift();
 					if (cut) {
-						chrome.tts.speak(cut, {
+						SpeechSynthesis.speak(cut, {
 							gender: arg.hasOwnProperty("gender") ? arg.gender : (storage.get("voiceGender") == "female" ? "female" : "male"),
 							lang: "en-GB",
 							volume: type(arg.volume) == "number" ? arg.volume : (type(storage.get("voiceVolume")) == "number" ? storage.get("voiceVolume") : .5),
@@ -447,7 +447,7 @@ ext.tts = {
 		callBack = fixCB(callBack);
 		if (ext.isBackground && ext.tts.enabled) {
 			ext.tts.reading = false;
-			chrome.tts.stop();
+			SpeechSynthesis.stop();
 			callBack(true);
 		} else if (ext.tts.enabled) {
 			ipc.send("ext.tts", { request: "tts", method: "stop" }, function (x) {

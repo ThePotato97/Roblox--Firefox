@@ -1,5 +1,5 @@
 ﻿/* background/notifiers/catalogNotifier.js [06/03/2017] */
-RPlus.notifiers.catalog = (function () {
+/* RPlus.notifiers.catalog = (function () {
 	var lastRegistration = 0;
 	var maxTokenBackoff = 5 * 60 * 1000;
 	var minTokenBackoff = 7500;
@@ -14,7 +14,7 @@ RPlus.notifiers.catalog = (function () {
 			}
 
 			Roblox.users.getAuthenticatedUser().then(function (user) {
-				chrome.instanceID.getToken({ authorizedEntity: "303497097698", scope: "FCM" }, function (token) {
+				messaging.getToken({ authorizedEntity: "303497097698", scope: "FCM" }, function (token) {
 					$.post("https://api.roblox.plus/v2/itemnotifier/registertoken", {
 						token: token,
 						robloxUserId: user ? user.id : null
@@ -211,8 +211,8 @@ RPlus.notifiers.catalog = (function () {
 		}
 	}
 	
-	chrome.gcm.onMessage.addListener(processMessage);
-	chrome.instanceID.onTokenRefresh.addListener(updateToken);
+	//chrome.gcm.onMessage.addListener(processMessage);
+	//chrome.instanceID.onTokenRefresh.addListener(updateToken);
 
 	ipc.on("catalogNotifier:testBuyButton", function () {
 		Roblox.thumbnails.getAssetThumbnailUrl(904518348, 150, 150).then(function(assetThumbnailUrl) {
@@ -248,7 +248,7 @@ RPlus.notifiers.catalog = (function () {
 			return new Date(lastRegistration);
 		}
 	};
-})();
+})(); */
 
 
 // WebGL3D

@@ -1,6 +1,7 @@
 /*
 	jquery.notifications.ext.js [10/08/2016]
 */
+
 (function () {
 	var audioPlayers = {};
 	var speaking = "";
@@ -41,7 +42,7 @@
 				console.error("Failed to play audio", notification.metadata.robloxSound, e);
 			});
 		} else if (notification.metadata.speak) {
-			chrome.tts.speak(notification.metadata.speak, {
+			SpeechSynthesis.speak(notification.metadata.speak, {
 				lang: "en-GB",
 				volume: volume,
 				onEvent: function (e) {
@@ -68,7 +69,7 @@
 			audioPlayers[notification.tag].stop();
 		}
 		if (speaking == notification.tag) {
-			chrome.tts.stop();
+			SpeechSynthesis.stop();
 		}
 
 		setNotificationCount();
